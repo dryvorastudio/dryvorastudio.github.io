@@ -64,6 +64,10 @@ if(ku && !DOTYK){ let x=innerWidth/2,y=innerHeight/2,cx=x,cy=y;
 
 const rok=document.getElementById('rok'); if(rok) rok.textContent = Math.max(2026, new Date().getFullYear());
 
+// ── widoczność: pętle animacji działają tylko, gdy element jest na ekranie ──
+EH.widac = el => { const o={v:false}; if(!el) return o; new IntersectionObserver(es=>es.forEach(e=>{ o.v=e.isIntersecting; }), {rootMargin:'100px'}).observe(el); return o; };
+EH.mobil = matchMedia('(max-width:700px), (hover:none)').matches;
+const ioPas = new IntersectionObserver(es=>es.forEach(e=>{ e.target._vis=e.isIntersecting; }), {rootMargin:'60px'});
 // ── animowane paski klatek (pety, bossowie) ──
 // el.dataset: src, n (klatek), fw, fh — rysowane przez background-position, jeden zegar dla wszystkich
 const paski = new Set();
@@ -71,14 +75,14 @@ EH.pasek = (el, src, n, fw, fh, wys, fps, row, rows)=>{
   const k = wys/fh, w = Math.round(fw*k), h=Math.round(wys); row=row||0; rows=rows||1;
   el.style.width = w+'px'; el.style.height = h+'px';
   el.style.backgroundImage = `url(${src})`; el.style.backgroundSize = `${w*n}px ${h*rows}px`;
-  el._n=n; el._w=w; el._y=-row*h; el._fps=fps||8; el._f=Math.floor(Math.random()*n); el.style.backgroundPosition=`${-el._f*w}px ${el._y}px`; paski.add(el); return el;
+  el._n=n; el._w=w; el._y=-row*h; el._fps=fps||8; el._f=Math.floor(Math.random()*n); el.style.backgroundPosition=`${-el._f*w}px ${el._y}px`; if(!paski.has(el)){ paski.add(el); el._vis=true; ioPas.observe(el); } return el;
 };
 // pet: jeden arkusz na gatunek, wiersz = etap wyglądu (gwiazdka)
 EH.pet = (el, p, g, wys)=>{ const [w,h,n,rows]=p.s; return EH.pasek(el, `pety/${p.id}.webp`, n, w, h, wys, 6, p.g[g], rows); };
 EH.pasekStop = el => paski.delete(el);
 let ostP=0;
 (function tik(t){ const dt=Math.min(200,t-ostP); ostP=t;
-  for(const el of paski){ if(!el.isConnected){ paski.delete(el); continue; }
+  for(const el of paski){ if(!el.isConnected){ paski.delete(el); ioPas.unobserve(el); continue; } if(!el._vis || el._stop) continue;
     el._acc=(el._acc||0)+dt; const okres=1000/(el._fps||6);
     if(el._acc>=okres){ el._acc%=okres; el._f=(el._f+1)%el._n; el.style.backgroundPosition = `${-el._f*el._w}px ${el._y||0}px`; } }
   requestAnimationFrame(tik); })(0);

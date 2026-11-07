@@ -101,7 +101,7 @@ let W=0,H=0,DPR=1, s=1, ox=0, oy=0, gotowe=false;
 const mysz={x:0,y:0,tx:0,ty:0}; let przew=0, czas=0, ost=performance.now();
 
 function rozmiar(){
-  DPR = Math.min(2, window.devicePixelRatio||1) * (innerWidth<700 ? 0.85 : 1);
+  DPR = innerWidth<700 ? Math.min(1.25, window.devicePixelRatio||1) : Math.min(2, window.devicePixelRatio||1);
   const r = cv.getBoundingClientRect(); W=r.width; H=r.height;
   cv.width = Math.round(W*DPR); cv.height = Math.round(H*DPR);
   // widoczna wysokość źródła ok. 1180 px (niebo, góry, wioska) — boki dopełnia lustro i ciemność
@@ -146,8 +146,9 @@ function nowa(typ){
   if(typ==='gwiazda') return {typ, x:r()*SW*2.4-SW*0.7, y:r()*560, z:0, zmax:1e9, wl:r()*6.28, ro:0.7+Math.pow(r(),3)*2.6, g:0.10, f:0.6+r()*2.2};
   return {typ, x:0,y:0,vx:0,vy:0,z:0,zmax:1, wl:0, ro:2, g:0.5};
 }
-for(let i=0;i<180;i++) czast.push(nowa('gwiazda'));
-for(let i=0;i<70;i++) czast.push(nowa('swietlik'));
+const MOB = innerWidth<700;
+for(let i=0;i<(MOB?90:180);i++) czast.push(nowa('gwiazda'));
+for(let i=0;i<(MOB?35:70);i++) czast.push(nowa('swietlik'));
 
 // ── pety w locie ──
 const lot={a:null, nast:2.5, i:0};
@@ -203,7 +204,7 @@ function mgla(y0,y1,g,kol,a,gl2){
 let zarAkum=0;
 function rysujCzast(typ){
   const dt=1/60; let n=0;
-  if(typ==='zar' && !RM){ zarAkum += 0.9; while(zarAkum>1){ zarAkum--; if(czast.length<900) czast.push(nowa('zar')); } }
+  if(typ==='zar' && !RM){ zarAkum += MOB?0.45:0.9; while(zarAkum>1){ zarAkum--; if(czast.length<900) czast.push(nowa('zar')); } }
   for(let i=czast.length-1;i>=0;i--){
     const p=czast[i]; if(p.typ!==typ) continue;
     let a=1, kol;
