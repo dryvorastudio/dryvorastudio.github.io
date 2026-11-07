@@ -468,3 +468,50 @@ h1,h2,h3,h4{font-family:var(--f-tyt); font-weight:700; line-height:1.08; margin:
   .rej-karta{border-radius:28px}
   .kowadlo{max-width:340px}
 }
+
+/* ══ telefon: lżej i ciaśniej ══ */
+@media (max-width:700px){
+  body::after{display:none}
+  *{backdrop-filter:none!important; -webkit-backdrop-filter:none!important}
+  .nav.tlo{background:rgba(10,8,17,.96)}
+  .nav-linki{background:#0c0914}
+  .sek{padding:68px 0}
+  .naglowek{margin-bottom:30px}
+  .h2{font-size:clamp(28px,8vw,36px); margin:12px 0}
+  .lead{font-size:16px}
+  .wej{transform:translateY(18px)}
+  .hero-logo{width:min(200px,50vw,26vh); margin-bottom:4px}
+  .hero h1{font-size:clamp(26px,7.4vw,34px)}
+  .hero p.lead{font-size:15px; margin:12px auto 20px}
+  .hero-cta .btn{padding:13px 20px; font-size:15px}
+  .nagroda-pigulka{font-size:12.5px; margin-top:16px}
+  .zwoj{display:none}
+  .pasek{padding:14px 0} .pasek span{font-size:15px; gap:28px} .pasek-tor{gap:28px}
+  .kino-ekran{transform:none!important; border-radius:18px}
+  .graj{width:76px; height:76px} .graj svg{width:28px; height:28px}
+  .op-krok{padding:18px 0 34px} .op-krok h3{font-size:24px; margin:8px 0 10px} .op-krok p{font-size:15px}
+  .op-mobil{border-radius:16px; margin-top:16px}
+  .karuzela{height:300px; min-height:0; perspective:900px}
+  .kar-el .spr{filter:none!important}
+  .kar-podloga{display:none}
+  .pet-podium{min-height:280px}
+  .pet-info h3{font-size:26px}
+  .um{padding:12px; gap:12px} .um .ik{width:38px; height:38px; font-size:18px}
+  .wylegarnia{margin-top:60px}
+  .kz-plus{font-size:44px}
+  .s4{grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px}
+  .s4 .karta{padding:16px; border-radius:18px} .s4 .karta h3{font-size:16px; margin:10px 0 6px} .s4 .karta p{font-size:13px; line-height:1.5}
+  .s4 .ikona{width:40px; height:40px; font-size:19px; border-radius:12px}
+  .s3 .karta{padding:20px}
+  .boss img, .boss .spr{max-width:100%}
+  .boss{padding:14px 8px} .boss b{font-size:14px}
+  .rej-karta{padding:26px 20px}
+  .faq summary{font-size:17px; padding:18px 40px 18px 0}
+  .stopka{padding:44px 0 30px}
+  .karta, .budynek, .boss{transform:none!important}
+  .boss img{animation:none}
+}
+@media (max-width:700px){
+  .hero-tresc{padding-top:calc(var(--nav) + 30px)}
+  .szansa{grid-template-columns:108px 1fr 46px; font-size:12.5px}
+}
