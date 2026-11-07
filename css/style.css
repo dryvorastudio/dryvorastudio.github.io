@@ -528,3 +528,6 @@ h1,h2,h3,h4{font-family:var(--f-tyt); font-weight:700; line-height:1.08; margin:
   .hero-tresc{padding-top:calc(var(--nav) + 30px)}
   .szansa{grid-template-columns:108px 1fr 46px; font-size:12.5px}
 }
+
+.rej-karta .btn-discord{margin-left:12px} .btn-discord svg{width:22px;height:22px;color:#a8b4ff}
+@media (max-width:700px){ .rej-karta .btn-discord{margin:12px 0 0} }
