@@ -104,6 +104,14 @@ h1,h2,h3,h4{font-family:var(--f-tyt); font-weight:700; line-height:1.08; margin:
 .hero h1{font-size:clamp(28px,4.4vw,58px); text-shadow:0 4px 30px rgba(0,0,0,.7); max-width:15ch}
 .hero p.lead{color:#eadfca; text-shadow:0 2px 16px rgba(0,0,0,.9); margin:16px auto 30px; max-width:560px}
 .hero-cta{display:flex; flex-wrap:wrap; gap:14px; justify-content:center}
+.odlicz{display:flex; flex-direction:column; align-items:center; gap:8px; margin:-8px auto 22px}
+.odlicz-tyt{font-size:12px; letter-spacing:.28em; text-transform:uppercase; color:var(--zloto); text-shadow:0 2px 12px rgba(0,0,0,.9)}
+.odlicz-pola{display:flex; gap:8px}
+.odlicz-pole{min-width:64px; padding:8px 6px 6px; border-radius:12px; background:rgba(20,12,30,.62); border:1px solid rgba(255,210,122,.3); backdrop-filter:blur(10px); display:flex; flex-direction:column; align-items:center; line-height:1}
+.odlicz-pole b{font-family:var(--f-tyt); font-size:28px; font-weight:800; color:#fff6e3; font-variant-numeric:tabular-nums; text-shadow:0 0 18px rgba(255,150,50,.55)}
+.odlicz-pole small{margin-top:4px; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--tekst3)}
+.odlicz.po .odlicz-pola{display:none}
+.odlicz.po .odlicz-tyt{font-size:16px; letter-spacing:.2em}
 .nagroda-pigulka{text-align:left; display:inline-flex; align-items:center; gap:10px; margin-top:22px; padding:8px 16px 8px 8px; border-radius:999px; font-size:14px; font-weight:600;
   background:rgba(20,12,30,.6); border:1px solid rgba(255,210,122,.35); backdrop-filter:blur(10px); color:var(--zloto)}
 .nagroda-pigulka b{display:inline-grid; place-items:center; width:28px; height:28px; border-radius:50%; background:radial-gradient(circle at 30% 30%,#fff2c4,#ffb340); color:#3a1d00; font-size:14px}
@@ -484,7 +492,12 @@ h1,h2,h3,h4{font-family:var(--f-tyt); font-weight:700; line-height:1.08; margin:
   .hero h1{font-size:clamp(26px,7.4vw,34px)}
   .hero p.lead{font-size:15px; margin:12px auto 20px}
   .hero-cta .btn{padding:13px 20px; font-size:15px}
-  .nagroda-pigulka{font-size:12.5px; margin-top:16px}
+  .nagroda-pigulka{font-size:12.5px; margin-top:14px}
+  .hero p.lead{display:none}
+  .odlicz{margin:6px auto 16px; gap:6px}
+  .odlicz-pole{min-width:56px; padding:6px 4px 5px; border-radius:10px}
+  .odlicz-pole b{font-size:22px}
+  .odlicz-tyt{font-size:11px}
   .zwoj{display:none}
   .pasek{padding:14px 0} .pasek span{font-size:15px; gap:28px} .pasek-tor{gap:28px}
   .kino-ekran{transform:none!important; border-radius:18px}
