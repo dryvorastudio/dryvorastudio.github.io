@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Inter:wght@400;500;600;700;800&family=Lora:ital@0;1&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="img/L_front.webp">
-<link rel="stylesheet" href="css/style.css?v=20261107">
+<link rel="stylesheet" href="css/style.css?v=20261107b">
 <script>/* język przed pierwszym malowaniem */(function(){try{var l=localStorage.getItem('eh_lang');}catch(e){}if(!l){l=(navigator.language||'pl').slice(0,2)==='pl'?'pl':'en';}document.documentElement.lang=l;})();</script>
 <style>html[lang="pl"] .en, html[lang="en"] .pl{display:none!important}</style>
 </head>
@@ -331,6 +331,10 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#2b1200" d="M3.6 1.8c-.3.3-.5.8-.5 1.4v17.6c0 .6.2 1.1.5 1.4l.1.1 9.9-9.9v-.2L3.7 1.7l-.1.1Zm13.3 13.4-3.3-3.3v-.2l3.3-3.3.1.1 3.9 2.2c1.1.6 1.1 1.7 0 2.3l-3.9 2.2h-.1Zm-.1.1L13.4 12 3.6 21.8c.4.4 1 .4 1.7.1l11.5-6.6M16.8 8.7 5.3 2.1c-.7-.4-1.3-.3-1.7.1L13.4 12l3.4-3.3Z"/></svg>
             <span class="dwa"><small>Google Play</small><span class="pl">Zarejestruj się wcześniej</span><span class="en">Pre-register now</span></span>
           </a>
+          <a class="btn btn-duch btn-discord" href="https://discord.gg/trJm7VyFcS" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.3 4.4A19.6 19.6 0 0 0 15.4 3l-.6 1.3a18 18 0 0 0-5.5 0L8.7 3a19.5 19.5 0 0 0-4.9 1.5C.7 9.1-.1 13.6.3 18.1a19.8 19.8 0 0 0 6 3l1.3-2.1c-.7-.3-1.4-.6-2-1l.5-.4a14 14 0 0 0 11.9 0l.5.4c-.6.4-1.3.7-2 1l1.3 2.1a19.7 19.7 0 0 0 6-3c.5-5.2-.8-9.7-3.5-13.7ZM8.3 15.3c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Zm7.4 0c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Z"/></svg>
+            <span class="pl">Dołącz do Discorda</span><span class="en">Join our Discord</span>
+          </a>
         </div>
         <div class="nagroda-3d" id="nagroda3d">
           <div class="nagroda-obrot" id="nagrodaObrot">
@@ -368,7 +372,7 @@
       <div><a href="index.html" class="nav-logo" style="padding:0"><img src="img/logo.webp" alt="" width="38" height="38">EMBERHOLD</a>
         <p><span class="pl">Fantasy strategia o budowaniu osady, hodowli petów i wyprawach do lochów. Tworzona z pasją przez Dryvora Studio.</span><span class="en">A fantasy strategy game about building a settlement, raising pets and delving into dungeons. Made with passion by Dryvora Studio.</span></p></div>
       <div><h4><span class="pl">Gra</span><span class="en">Game</span></h4><a href="#swiat"><span class="pl">Świat</span><span class="en">World</span></a><a href="#pety"><span class="pl">Pety</span><span class="en">Pets</span></a><a href="#kuznia"><span class="pl">Kuźnia</span><span class="en">Forge</span></a><a href="jak-grac.html"><span class="pl">Jak grać</span><span class="en">How to play</span></a></div>
-      <div><h4><span class="pl">Linki</span><span class="en">Links</span></h4><a href="https://play.google.com/store/apps/details?id=com.emberhold.village" target="_blank" rel="noopener">Google Play</a><a href="https://smartoutlet02-tech.github.io/dryvora.github.io/" target="_blank" rel="noopener"><span class="pl">Polityka prywatności</span><span class="en">Privacy policy</span></a></div>
+      <div><h4><span class="pl">Linki</span><span class="en">Links</span></h4><a href="https://play.google.com/store/apps/details?id=com.emberhold.village" target="_blank" rel="noopener">Google Play</a><a href="https://discord.gg/trJm7VyFcS" target="_blank" rel="noopener">Discord</a><a href="https://smartoutlet02-tech.github.io/dryvora.github.io/" target="_blank" rel="noopener"><span class="pl">Polityka prywatności</span><span class="en">Privacy policy</span></a></div>
     </div>
     <div class="stopka-dol"><span>© <span id="rok">2026</span> Dryvora Studio · Emberhold</span><span class="pl">Google Play i logo Google Play są znakami towarowymi Google LLC.</span><span class="en">Google Play and the Google Play logo are trademarks of Google LLC.</span></div>
   </div>
@@ -377,9 +381,9 @@
 <div class="modal" id="modal" aria-hidden="true"><button class="modal-x" id="modalX" aria-label="Zamknij">✕</button><video id="modalVid" controls playsinline preload="none" poster="img/trailer_poster.webp" data-src="klipy/zwiastun.mp4"></video></div>
 <div class="kursor" id="kursor"></div>
 
-<script src="js/dane-pety.js?v=20261107"></script>
+<script src="js/dane-pety.js?v=20261107b"></script>
 <script src="js/scena.js"></script>
 <script src="js/wspolne.js"></script>
-<script src="js/glowna.js?v=20261107"></script>
+<script src="js/glowna.js?v=20261107b"></script>
 </body>
 </html>
