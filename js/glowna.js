@@ -383,3 +383,20 @@ const widN=EH.widac(nag);
 (function f(t){ if(!widN.v){ requestAnimationFrame(f); return; } const a=t/1000; nx+=(ntx+Math.sin(a*0.7)*0.12-nx)*0.08; ny+=(nty+Math.cos(a*0.5)*0.08-ny)*0.08;
   nob.style.transform=`rotateY(${nx*34}deg) rotateX(${-ny*26}deg)`; requestAnimationFrame(f); })(0);
 })();
+
+// ── Odliczanie do premiery ──
+(function(){
+  const el=document.getElementById('odlicz'); if(!el) return;
+  const T=Date.parse(el.dataset.premiera); const pola={};
+  el.querySelectorAll('[data-o]').forEach(b=>pola[b.dataset.o]=b);
+  const tyt=el.querySelector('.odlicz-tyt');
+  function tick(){
+    let r=T-Date.now();
+    if(r<=0){ el.classList.add('po'); tyt.innerHTML='<span class="pl">Już dostępne w Google Play</span><span class="en">Out now on Google Play</span>'; document.querySelectorAll('.btn-zar .dwa').forEach(d=>{d.innerHTML='<small>Google Play</small><span class="pl">Pobierz za darmo</span><span class="en">Download free</span>'}); return; }
+    r=Math.floor(r/1000);
+    const d=Math.floor(r/86400), h=Math.floor(r%86400/3600), m=Math.floor(r%3600/60), s=r%60;
+    pola.d.textContent=d; pola.h.textContent=String(h).padStart(2,'0'); pola.m.textContent=String(m).padStart(2,'0'); pola.s.textContent=String(s).padStart(2,'0');
+    setTimeout(tick,1000-Date.now()%1000);
+  }
+  tick();
+})();
