@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Emberhold — buduj wioskę, hoduj pety, schodź do lochów</title>
+<meta name="description" content="Emberhold to fantasy strategia na Androida: zbuduj żywą wioskę, wykluj 32 pety, ulepszaj sprzęt w kuźni i pokonaj bossów w lochach. Zarejestruj się wcześniej i odbierz 200 diamentów oraz srebrne jajo.">
+<meta name="theme-color" content="#0a0811">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/icon-192.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Emberhold — Settlement Builder">
+<meta property="og:description" content="Zbuduj wioskę, wykluj legendarne pety i zejdź do lochów. Pre-rejestracja z nagrodą: 200 💎 + srebrne jajo.">
+<meta property="og:image" content="https://dryvorastudio.github.io/img/og.jpg">
+<link rel="canonical" href="https://dryvorastudio.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Inter:wght@400;500;600;700;800&family=Lora:ital@0;1&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/L_front.webp">
+<link rel="stylesheet" href="css/style.css">
+<script>/* język przed pierwszym malowaniem */(function(){try{var l=localStorage.getItem('eh_lang');}catch(e){}if(!l){l=(navigator.language||'pl').slice(0,2)==='pl'?'pl':'en';}document.documentElement.lang=l;})();</script>
+<style>html[lang="pl"] .en, html[lang="en"] .pl{display:none!important}</style>
+</head>
+<body>
+
+<!-- ═══ NAWIGACJA ═══ -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="index.html" class="nav-logo" aria-label="Emberhold"><img src="img/logo.webp" alt="" width="38" height="38">EMBERHOLD</a>
+    <nav class="nav-linki" id="menu">
+      <a href="#swiat"><span class="pl">Świat</span><span class="en">World</span></a>
+      <a href="#pety"><span class="pl">Pety</span><span class="en">Pets</span></a>
+      <a href="#kuznia"><span class="pl">Kuźnia</span><span class="en">Forge</span></a>
+      <a href="#bossowie"><span class="pl">Lochy</span><span class="en">Dungeons</span></a>
+      <a href="jak-grac.html"><span class="pl">Jak grać</span><span class="en">How to play</span></a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="jezyk" id="jezyk" role="group" aria-label="Język / Language"><i></i><button data-l="pl">PL</button><button data-l="en">EN</button></div>
+    <a class="btn btn-zar btn-nav" href="#rejestracja"><span class="pl">Zarejestruj się</span><span class="en">Pre-register</span></a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+<!-- ═══ HERO 3D ═══ -->
+<section class="hero" id="start">
+  <div class="hero-fallback"></div>
+  <canvas id="scena" aria-hidden="true"></canvas>
+  <div class="hero-tresc">
+    <img class="hero-logo wej" src="img/logo.webp" alt="Emberhold" width="440" height="440">
+    <h1 class="wej" style="--d:.15s"><span class="pl">Rozpal ognisko. Zbuduj dom.</span><span class="en">Light the fire. Build a home.</span></h1>
+    <p class="lead wej" style="--d:.3s"><span class="pl">Wioska, która żyje własnym życiem. Osadnicy z imionami, noce pełne wilków, legendarne pety i lochy, z których nie każdy wraca.</span><span class="en">A village with a life of its own. Settlers with names, nights full of wolves, legendary pets and dungeons not everyone returns from.</span></p>
+    <div class="hero-cta wej" style="--d:.45s">
+      <a class="btn btn-zar" href="https://play.google.com/store/apps/details?id=com.emberhold.village" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#2b1200" d="M3.6 1.8c-.3.3-.5.8-.5 1.4v17.6c0 .6.2 1.1.5 1.4l.1.1 9.9-9.9v-.2L3.7 1.7l-.1.1Zm13.3 13.4-3.3-3.3v-.2l3.3-3.3.1.1 3.9 2.2c1.1.6 1.1 1.7 0 2.3l-3.9 2.2h-.1Zm-.1.1L13.4 12 3.6 21.8c.4.4 1 .4 1.7.1l11.5-6.6M16.8 8.7 5.3 2.1c-.7-.4-1.3-.3-1.7.1L13.4 12l3.4-3.3Z"/></svg>
+        <span class="dwa"><small class="pl">Google Play</small><small class="en">Google Play</small><span class="pl">Zarejestruj się wcześniej</span><span class="en">Pre-register now</span></span>
+      </a>
+      <button class="btn btn-duch" data-zwiastun>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5.5v13l11-6.5z"/></svg>
+        <span class="pl">Obejrzyj zwiastun</span><span class="en">Watch trailer</span>
+      </button>
+    </div>
+    <a href="#rejestracja" class="nagroda-pigulka wej" style="--d:.6s"><b>🎁</b><span class="pl">Nagroda za rejestrację: 200 💎 + srebrne jajo</span><span class="en">Pre-registration reward: 200 💎 + silver egg</span></a>
+  </div>
+  <div class="zwoj" aria-hidden="true"><i></i><span class="pl">przewiń</span><span class="en">scroll</span></div>
+</section>
+
+<!-- ═══ PASEK ═══ -->
+<div class="pasek" aria-hidden="true"><div class="pasek-tor">
+  <span class="pl">18 budynków</span><span class="pl">32 pety</span><span class="pl">10 bossów</span><span class="pl">4 pory roku</span><span class="pl">6 specjalizacji bohaterów</span><span class="pl">ekwipunek do +9</span><span class="pl">7 języków</span>
+  <span class="en">18 buildings</span><span class="en">32 pets</span><span class="en">10 bosses</span><span class="en">4 seasons</span><span class="en">6 hero specialisations</span><span class="en">gear up to +9</span><span class="en">7 languages</span>
+  <span class="pl">18 budynków</span><span class="pl">32 pety</span><span class="pl">10 bossów</span><span class="pl">4 pory roku</span><span class="pl">6 specjalizacji bohaterów</span><span class="pl">ekwipunek do +9</span><span class="pl">7 języków</span>
+  <span class="en">18 buildings</span><span class="en">32 pets</span><span class="en">10 bosses</span><span class="en">4 seasons</span><span class="en">6 hero specialisations</span><span class="en">gear up to +9</span><span class="en">7 languages</span>
+</div></div>
+
+<!-- ═══ ZWIASTUN ═══ -->
+<section class="sek" id="zwiastun">
+  <div class="poswiata" style="width:700px;height:500px;left:50%;top:30%;margin-left:-350px;background:#ff6a1a;opacity:.18"></div>
+  <div class="wrap">
+    <div class="naglowek srodek">
+      <span class="oko wej"><span class="pl">Zwiastun</span><span class="en">Trailer</span></span>
+      <h2 class="h2 wej"><span class="zl pl">Sześćdziesiąt sekund z Emberhold</span><span class="zl en">Sixty seconds of Emberhold</span></h2>
+      <p class="lead wej"><span class="pl">Od pierwszej iskry po ostatniego bossa. Wszystko, co zobaczysz, to prawdziwa rozgrywka.</span><span class="en">From the first spark to the final boss. Everything you see is real gameplay.</span></p>
+    </div>
+    <div class="kino wej">
+      <div class="kino-ekran" id="kinoEkran" data-zwiastun role="button" tabindex="0" aria-label="Odtwórz zwiastun">
+        <video src="klipy/wioska.mp4" muted loop playsinline autoplay preload="metadata" poster="img/trailer_poster.webp"></video>
+        <div class="graj"><svg viewBox="0 0 24 24"><path d="M6 4v16l14-8z"/></svg></div>
+        <div class="kino-napis">▶ 1:00 · <span class="pl">z dźwiękiem</span><span class="en">with sound</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ OPOWIEŚĆ (przypięta scena) ═══ -->
+<section class="sek opowiesc" id="swiat" style="padding-top:40px">
+  <div class="wrap">
+    <div class="naglowek">
+      <span class="oko wej"><span class="pl">Twoja osada</span><span class="en">Your settlement</span></span>
+      <h2 class="h2 wej"><span class="zl pl">Jedna iskra. Cała historia.</span><span class="zl en">One spark. A whole story.</span></h2>
+    </div>
+    <div class="op-uklad">
+      <div class="op-kroki" id="opKroki">
+        <article class="op-krok" data-klip="ognisko">
+          <span class="num">01</span>
+          <h3><span class="pl">Wszystko zaczyna się od ogniska</span><span class="en">It all begins with a campfire</span></h3>
+          <p><span class="pl">Na polanie płonie samotny ogień. Przy nim zbierają się pierwsi osadnicy. Postaw chatę, farmę i tartak, a z każdym dniem z kilku namiotów wyrośnie prawdziwa wioska.</span><span class="en">A lone fire burns in a clearing and the first settlers gather around it. Raise a hut, a farm and a sawmill, and day by day a handful of tents grows into a real village.</span></p>
+          <ul><li><span class="pl">Drewno, kamień, żywność, złoto i nauka</span><span class="en">Wood, stone, food, gold and science</span></li><li><span class="pl">Magazyny rosną z poziomem budynków</span><span class="en">Storage grows with building levels</span></li></ul>
+          <div class="op-mobil"><video data-src="klipy/hist_ognisko.mp4" muted loop playsinline></video></div>
+        </article>
+        <article class="op-krok" data-klip="wioska">
+          <span class="num">02</span>
+          <h3><span class="pl">18 budynków, każdy z sensem</span><span class="en">18 buildings, each with a purpose</span></h3>
+          <p><span class="pl">Kuźnia ulepsza sprzęt, tawerna sprowadza najemników, biblioteka odkrywa badania, szpital leczy rannych. Każdy budynek ma poziomy i własne drzewko ulepszeń.</span><span class="en">The forge upgrades gear, the tavern brings mercenaries, the library unlocks research, the hospital heals the wounded. Every building has levels and its own upgrade tree.</span></p>
+          <ul><li><span class="pl">Rozbudowa budynków na kolejne poziomy</span><span class="en">Level buildings up step by step</span></li><li><span class="pl">Palisady, wieże i wnyki do obrony</span><span class="en">Palisades, towers and traps for defence</span></li></ul>
+          <div class="op-mobil"><video data-src="klipy/hist_budynki.mp4" muted loop playsinline></video></div>
+        </article>
+        <article class="op-krok" data-klip="osadnicy">
+          <span class="num">03</span>
+          <h3><span class="pl">Każdy osadnik ma imię</span><span class="en">Every settler has a name</span></h3>
+          <p><span class="pl">Drwal, górnik, rolnik, uczony, strażnik, medyk, alchemik. Osadnicy mają cechy charakteru, nastrój, zdrowie, sytość i doświadczenie. Pracowity pracuje szybciej, tchórz ucieka z walki, a zrzęda psuje humor całej wiosce.</span><span class="en">Logger, miner, farmer, scholar, guard, medic, alchemist. Settlers have traits, mood, health, fullness and experience. The hard-working get more done, cowards flee from battle and a grump spoils everyone's mood.</span></p>
+          <ul><li><span class="pl">12 cech charakteru: dobrych i złych</span><span class="en">12 traits, good and bad</span></li><li><span class="pl">Nowi chętni co dzień w tawernie</span><span class="en">New recruits at the tavern every day</span></li></ul>
+          <div class="op-mobil"><video data-src="klipy/hist_osadnicy.mp4" muted loop playsinline></video></div>
+        </article>
+        <article class="op-krok" data-klip="noc">
+          <span class="num">04</span>
+          <h3><span class="pl">Gdy zapada noc…</span><span class="en">When night falls…</span></h3>
+          <p><span class="pl">Po zmroku z lasu wychodzą wilcze watahy, a zbóje szukają słabego punktu w palisadzie. Strażnicy, wieże i Twoje pety stają do walki. Ranni trafiają do szpitala, a rano trzeba odbudować zniszczenia.</span><span class="en">After dark, wolf packs leave the forest and raiders probe the palisade for a weak spot. Guards, towers and your pets join the fight. The wounded go to the hospital and at dawn the damage must be repaired.</span></p>
+          <ul><li><span class="pl">Pełny cykl dnia i nocy</span><span class="en">Full day and night cycle</span></li><li><span class="pl">Obrona rośnie z koszarami i badaniami</span><span class="en">Defence grows with barracks and research</span></li></ul>
+          <div class="op-mobil"><video data-src="klipy/hist_noc.mp4" muted loop playsinline></video></div>
+        </article>
+        <article class="op-krok" data-klip="bohaterowie">
+          <span class="num">05</span>
+          <h3><span class="pl">Bohaterowie i ich drogi</span><span class="en">Heroes and their paths</span></h3>
+          <p><span class="pl">Najdzielniejsi osadnicy wybierają klasę: Wojownik, Asasyn albo Mag. Potem specjalizację: rycerz lub obrońca, snajper lub łowca, uzdrowiciel lub czarodziej. Każda ma własne umiejętności.</span><span class="en">Your bravest settlers choose a class: Warrior, Assassin or Mage. Then a specialisation: knight or defender, sniper or hunter, healer or sorcerer. Each with its own skills.</span></p>
+          <ul><li><span class="pl">Ekwipunek: broń, hełm, zbroja, tarcza, buty, amulet, pierścień</span><span class="en">Gear: weapon, helmet, armour, shield, boots, amulet, ring</span></li><li><span class="pl">Rzadkości: unikatowe, heroiczne, legendarne</span><span class="en">Rarities: unique, heroic, legendary</span></li></ul>
+          <div class="op-mobil"><video data-src="klipy/hist_bohaterowie.mp4" muted loop playsinline></video></div>
+        </article>
+        <article class="op-krok" data-klip="loch">
+          <span class="num">06</span>
+          <h3><span class="pl">Zejdź do lochów</span><span class="en">Descend into the dungeons</span></h3>
+          <p><span class="pl">Wyślij drużynę w głąb ziemi. Im niżej, tym groźniejsi wrogowie i lepsze łupy. Na dnie czekają bossowie, a pieczęć powrotu zabiera drużynę do domu razem z sakwą.</span><span class="en">Send a party deep underground. The deeper you go, the deadlier the foes and the better the loot. Bosses wait at the bottom, and a return seal brings the party home with the whole loot bag.</span></p>
+          <ul><li><span class="pl">10 bossów i dziesiątki rodzajów wrogów</span><span class="en">10 bosses and dozens of enemy types</span></li><li><span class="pl">Legendarne przedmioty tylko z głębin</span><span class="en">Legendary items from the depths</span></li></ul>
+          <div class="op-mobil"><video data-src="klipy/hist_bossy.mp4" muted loop playsinline></video></div>
+        </article>
+      </div>
+      <div class="op-scena" aria-hidden="true">
+        <div class="urzadzenie" id="urzadzenie">
+          <div class="ekran" id="ekran">
+            <video data-k="ognisko" src="klipy/hist_ognisko.mp4" muted loop playsinline preload="auto" class="akt"></video>
+            <video data-k="wioska" data-src="klipy/hist_budynki.mp4" muted loop playsinline preload="none"></video>
+            <video data-k="osadnicy" data-src="klipy/hist_osadnicy.mp4" muted loop playsinline preload="none"></video>
+            <video data-k="noc" data-src="klipy/hist_noc.mp4" muted loop playsinline preload="none"></video>
+            <video data-k="bohaterowie" data-src="klipy/hist_bohaterowie.mp4" muted loop playsinline preload="none"></video>
+            <video data-k="loch" data-src="klipy/hist_bossy.mp4" muted loop playsinline preload="none"></video>
+          </div>
+          <div class="urz-etykieta"><i></i><span class="pl">nagranie z gry</span><span class="en">in-game footage</span></div>
+          <div class="op-pasek"><b id="opPasek"></b></div>
+          <div class="urz-cien"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PORY ROKU ═══ -->
+<section class="sek sek-ciemna" id="pory">
+  <div class="wrap">
+    <div class="naglowek srodek">
+      <span class="oko wej"><span class="pl">Pory roku</span><span class="en">Seasons</span></span>
+      <h2 class="h2 wej"><span class="zl pl">Rok ma 32 dni. Zima nie wybacza.</span><span class="zl en">A year lasts 32 days. Winter is unforgiving.</span></h2>
+      <p class="lead wej"><span class="pl">Każda pora trwa 8 dni i zmienia nie tylko wygląd świata, ale też ekonomię. Latem zbierz zapasy, bo zimą pola dają tylko 30% plonów.</span><span class="en">Each season lasts 8 days and changes not only how the world looks, but the economy too. Stock up in summer, because in winter fields yield only 30%.</span></p>
+    </div>
+    <div class="pory-wybor wej" id="poryWybor"></div>
+    <div class="pory-okno wej" id="poryOkno">
+      <video data-p="wiosna" src="klipy/pora_wiosna.mp4" muted loop playsinline preload="auto" class="akt"></video>
+      <video data-p="lato" data-src="klipy/pora_lato.mp4" muted loop playsinline preload="none"></video>
+      <video data-p="jesien" data-src="klipy/pora_jesien.mp4" muted loop playsinline preload="none"></video>
+      <video data-p="zima" data-src="klipy/pora_zima.mp4" muted loop playsinline preload="none"></video>
+      <div class="pory-kolo" id="poryKolo"></div>
+      <canvas id="poryCz"></canvas>
+      <div class="pory-dane" id="poryDane"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PETY ═══ -->
+<section class="sek pety-sek" id="pety">
+  <div class="poswiata" style="width:900px;height:600px;left:50%;top:10%;margin-left:-450px;background:#8b5cf6;opacity:.16"></div>
+  <div class="wrap">
+    <div class="naglowek srodek">
+      <span class="oko wej"><span class="pl">Bestiariusz</span><span class="en">Bestiary</span></span>
+      <h2 class="h2 wej"><span class="zl pl">32 pety. Każdy walczy inaczej.</span><span class="zl en">32 pets. Each fights its own way.</span></h2>
+      <p class="lead wej"><span class="pl">Pet chodzi za swoim właścicielem: w wiosce, nocą przy palisadzie i w lochach. Obróć karuzelę, wybierz peta i zobacz, jak zmienia się z każdą gwiazdką.</span><span class="en">A pet follows its owner: around the village, at the palisade at night and into the dungeons. Spin the carousel, pick a pet and see how it changes with every star.</span></p>
+    </div>
+    <div class="kar-sterowanie wej">
+      <button class="okragly" id="karLewo" aria-label="Poprzedni">‹</button>
+      <div class="filtry" id="filtryRang"></div>
+      <button class="okragly" id="karPrawo" aria-label="Następny">›</button>
+    </div>
+    <div class="karuzela wej" id="karuzela"><div class="kar-podloga"></div><div class="kar-pierscien" id="pierscien"></div></div>
+
+    <div class="pet-panel wej" id="petPanel">
+      <div class="pet-podium">
+        <div class="duzy" id="petDuzy"></div>
+        <div class="gwiazdy" id="petGwiazdy"></div>
+      </div>
+      <div class="pet-info" id="petInfo"></div>
+    </div>
+
+    <!-- wylęgarnia -->
+    <div class="wylegarnia" id="wylegarnia">
+      <div class="wej">
+        <span class="oko"><span class="pl">Inkubator</span><span class="en">Incubator</span></span>
+        <h2 class="h2" style="font-size:clamp(30px,4vw,52px)"><span class="pl">Wykluj swojego peta</span><span class="en">Hatch your own pet</span></h2>
+        <p class="lead"><span class="pl">To prawdziwe szanse z gry. Wybierz jajo i kliknij <b>Wykluj</b>. W grze jajo dojrzewa od 15 minut do 6 godzin, a inkubator mieści do 4 jaj naraz.</span><span class="en">These are the real in-game odds. Pick an egg and press <b>Hatch</b>. In the game an egg takes 15 minutes to 6 hours and the incubator holds up to 4 eggs at once.</span></p>
+        <div class="jaja" id="jaja"></div>
+        <div class="szanse" id="szanse"></div>
+        <button class="btn btn-zar" id="wyklujBtn"><span class="pl">🥚 Wykluj</span><span class="en">🥚 Hatch</span></button>
+        <div class="licznik" id="licznik"></div>
+      </div>
+      <div class="inkubator wej" style="--d:.15s">
+        <canvas id="inkCv"></canvas>
+        <div class="ink-wynik" id="inkWynik"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ KUŹNIA ═══ -->
+<section class="sek kuznia" id="kuznia">
+  <div class="kuznia-tlo"></div>
+  <div class="wrap">
+    <div class="kz-uklad">
+      <div class="kowadlo wej" id="kowadlo">
+        <canvas id="kzCv"></canvas>
+        <div class="kz-plus" id="kzPlus">+0</div>
+        <img class="kz-przedmiot pix" id="kzImg" src="img/items/weapon_leg.webp" alt="">
+      </div>
+      <div class="wej" style="--d:.1s">
+        <span class="oko"><span class="pl">Kuźnia</span><span class="en">The Forge</span></span>
+        <h2 class="h2"><span class="zl pl">Wykuj legendę. Do +9.</span><span class="zl en">Forge a legend. Up to +9.</span></h2>
+        <p class="lead"><span class="pl">Każdy plus to +15% do wszystkich statystyk przedmiotu. Poziom kuźni wyznacza granicę: +2 na poziom, aż do mistrzowskiego +9. Wypróbuj to sam, to te same wzory co w grze.</span><span class="en">Each plus adds +15% to all of an item's stats. The forge level sets the limit: +2 per level, all the way to a master +9. Try it yourself, it's the same formulas as in the game.</span></p>
+        <div class="kz-wybor" id="kzWybor"></div>
+        <div class="kz-pasek-poz"><label><span class="pl">Poziom kuźni</span><span class="en">Forge level</span></label><div class="poziomy" id="kzPoziomy"></div></div>
+        <div class="kz-tory" id="kzTory"></div>
+        <div class="kz-staty" id="kzStaty"></div>
+        <div class="koszt" id="kzKoszt"></div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <button class="btn btn-zar" id="kzUlepsz"><span class="pl">⚒️ Ulepsz</span><span class="en">⚒️ Upgrade</span></button>
+          <button class="btn btn-duch" id="kzReset"><span class="pl">Od nowa</span><span class="en">Reset</span></button>
+        </div>
+        <div class="kz-komunikat" id="kzKom"></div>
+      </div>
+    </div>
+    <div class="siatka s3" style="margin-top:80px">
+      <div class="karta wej"><div class="ikona">⚒️</div><h3><span class="pl">Ulepszanie</span><span class="en">Upgrading</span></h3><p><span class="pl">Kamień, złoto i nauka zamieniają zwykły miecz w broń bohatera. Koszt rośnie z każdym plusem i z rzadkością przedmiotu.</span><span class="en">Stone, gold and science turn a plain sword into a hero's weapon. The cost grows with every plus and with the item's rarity.</span></p></div>
+      <div class="karta wej" style="--d:.1s"><div class="ikona">🔮</div><h3><span class="pl">Łączenie</span><span class="en">Merging</span></h3><p><span class="pl">Trzy przedmioty tego samego rodzaju mogą stać się jednym, klasę wyżej: zwykły → unikatowy → heroiczny → legendarny. Szansa rośnie z poziomem kuźni.</span><span class="en">Three items of the same kind can become one, a class higher: common → unique → heroic → legendary. The chance grows with forge level.</span></p></div>
+      <div class="karta wej" style="--d:.2s"><div class="ikona">🔥</div><h3><span class="pl">Przetapianie</span><span class="en">Smelting</span></h3><p><span class="pl">Niepotrzebny sprzęt wraca do pieca i oddaje surowce. Nic się nie marnuje.</span><span class="en">Unneeded gear goes back into the furnace and gives up its materials. Nothing goes to waste.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BOSSOWIE ═══ -->
+<section class="sek bossowie" id="bossowie">
+  <div class="bossowie-tlo"></div>
+  <div class="wrap">
+    <div class="duo">
+      <div>
+        <span class="oko wej"><span class="pl">Lochy</span><span class="en">Dungeons</span></span>
+        <h2 class="h2 wej"><span class="zl pl">Głębiej. Ciemniej. Bogaciej.</span><span class="zl en">Deeper. Darker. Richer.</span></h2>
+        <p class="lead wej"><span class="pl">Zbierz drużynę z bohaterów i ich petów, zejdź po schodach i walcz piętro po piętrze. Każdy boss to prawdziwy sprawdzian Twojego ekwipunku.</span><span class="en">Assemble a party of heroes and their pets, take the stairs down and fight floor by floor. Every boss is a real test of your gear.</span></p>
+        <ul class="lista wej">
+          <li><div class="ikona">🗝️</div><div><b><span class="pl">Piętra i rozdroża</span><span class="en">Floors and crossroads</span></b><span class="pl">Wybierz ścieżkę: skarb, walka albo odpoczynek.</span><span class="en">Choose a path: treasure, a fight or a rest.</span></div></li>
+          <li><div class="ikona">🔯</div><div><b><span class="pl">Pieczęć powrotu</span><span class="en">Return seal</span></b><span class="pl">Wracasz do wioski z całym łupem, bez ryzyka.</span><span class="en">Return to the village with all your loot, no risk.</span></div></li>
+          <li><div class="ikona">💜</div><div><b><span class="pl">Legendarne łupy</span><span class="en">Legendary loot</span></b><span class="pl">Diamenty, rzadkie materiały i przedmioty, których nie wykuje żaden kowal.</span><span class="en">Diamonds, rare materials and items no smith can forge.</span></div></li>
+        </ul>
+      </div>
+      <div class="telefon wej" style="--d:.15s"><video data-src="klipy/boss.mp4" muted loop playsinline poster="img/s_5_boss.webp"></video></div>
+    </div>
+    <div class="boss-rzad" id="bossRzad"></div>
+  </div>
+</section>
+
+<!-- ═══ WIĘCEJ ═══ -->
+<section class="sek sek-ciemna" id="wiecej">
+  <div class="wrap">
+    <div class="naglowek srodek">
+      <span class="oko wej"><span class="pl">A to nie wszystko</span><span class="en">And that's not all</span></span>
+      <h2 class="h2 wej"><span class="zl pl">Świat szerszy niż wioska</span><span class="zl en">A world beyond the village</span></h2>
+    </div>
+    <div class="siatka s4">
+      <div class="karta wej"><div class="ikona">🗺️</div><h3><span class="pl">Wyprawy</span><span class="en">Expeditions</span></h3><p><span class="pl">Mapa świata pełna ruin, smoczych gniazd i wrogich osad. Wyślij drużynę i wróć z łupem.</span><span class="en">A world map full of ruins, dragon nests and rival settlements. Send a party and come back with loot.</span></p></div>
+      <div class="karta wej" style="--d:.08s"><div class="ikona">📜</div><h3><span class="pl">Badania</span><span class="en">Research</span></h3><p><span class="pl">Drzewko odkryć: od hartowania stali po mistrzowskie pieczęcie kowala.</span><span class="en">A tree of discoveries, from tempering steel to the master smith's seal.</span></p></div>
+      <div class="karta wej" style="--d:.16s"><div class="ikona">🍺</div><h3><span class="pl">Tawerna</span><span class="en">Tavern</span></h3><p><span class="pl">Ława najemnych: codziennie nowi chętni z cechami i poziomem. Pierwsi są za darmo.</span><span class="en">The mercenary bench: new recruits every day with traits and levels. The first ones are free.</span></p></div>
+      <div class="karta wej" style="--d:.24s"><div class="ikona">🏘️</div><h3><span class="pl">Trzy osady</span><span class="en">Three settlements</span></h3><p><span class="pl">Prowadź do trzech niezależnych wiosek, każdą z własną historią.</span><span class="en">Run up to three independent villages, each with its own story.</span></p></div>
+      <div class="karta wej"><div class="ikona">📅</div><h3><span class="pl">Codzienne nagrody</span><span class="en">Daily rewards</span></h3><p><span class="pl">Kalendarz nagród za każdy dzień gry i zadania, które popychają osadę do przodu.</span><span class="en">A reward calendar for every day you play and quests that push your settlement forward.</span></p></div>
+      <div class="karta wej" style="--d:.08s"><div class="ikona">🛒</div><h3><span class="pl">Bazar i kupcy</span><span class="en">Bazaar and traders</span></h3><p><span class="pl">Wymieniaj nadwyżki, wypatruj wędrownych kupców i rzadkich okazji.</span><span class="en">Trade your surplus and keep an eye out for travelling merchants and rare deals.</span></p></div>
+      <div class="karta wej" style="--d:.16s"><div class="ikona">☁️</div><h3><span class="pl">Zapis w chmurze</span><span class="en">Cloud save</span></h3><p><span class="pl">Postęp zapisuje się przez Google Play Games. Zmieniasz telefon? Wioska idzie z Tobą.</span><span class="en">Progress is saved via Google Play Games. New phone? Your village comes with you.</span></p></div>
+      <div class="karta wej" style="--d:.24s"><div class="ikona">🌍</div><h3><span class="pl">7 języków</span><span class="en">7 languages</span></h3><p><span class="pl">Polski, angielski, niemiecki, hiszpański, czeski, ukraiński i chiński.</span><span class="en">Polish, English, German, Spanish, Czech, Ukrainian and Chinese.</span></p></div>
+    </div>
+    <div class="srodek" style="margin-top:50px"><a class="btn btn-duch wej" href="jak-grac.html"><span class="pl">Pełny przewodnik: jak to wszystko działa →</span><span class="en">Full guide: how it all works →</span></a></div>
+  </div>
+</section>
+
+<!-- ═══ PRE-REJESTRACJA ═══ -->
+<section class="sek rejestracja" id="rejestracja">
+  <div class="wrap">
+    <div class="rej-karta wej">
+      <div class="rej-uklad">
+        <div>
+          <span class="oko"><span class="pl">Pre-rejestracja trwa</span><span class="en">Pre-registration is open</span></span>
+          <h2 class="h2"><span class="zl pl">Zapisz się teraz. Odbierz nagrodę w dniu premiery.</span><span class="zl en">Sign up now. Claim your reward on launch day.</span></h2>
+          <p class="lead"><span class="pl">Każdy, kto zarejestruje się wcześniej w Google Play, dostanie na start <b>200 diamentów</b> i <b>srebrne jajo</b>. Ze srebrnego jaja wykluwają się tylko pety rzadkie lub lepsze, a nawet legendarne.</span><span class="en">Everyone who pre-registers on Google Play gets <b>200 diamonds</b> and a <b>silver egg</b> to start with. A silver egg only hatches rare pets or better, even legendary ones.</span></p>
+          <div class="kroki-rej">
+            <div class="krok-rej"><b>1</b><span class="pl">Otwórz Emberhold w Google Play i kliknij „Zarejestruj się wcześniej”.</span><span class="en">Open Emberhold on Google Play and tap “Pre-register”.</span></div>
+            <div class="krok-rej"><b>2</b><span class="pl">W dniu premiery dostaniesz powiadomienie (możesz włączyć automatyczną instalację).</span><span class="en">On launch day you'll get a notification (you can turn on auto-install).</span></div>
+            <div class="krok-rej"><b>3</b><span class="pl">Uruchom grę, a nagroda sama trafi do Twojej wioski.</span><span class="en">Start the game and the reward lands in your village automatically.</span></div>
+          </div>
+          <a class="btn btn-zar" href="https://play.google.com/store/apps/details?id=com.emberhold.village" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#2b1200" d="M3.6 1.8c-.3.3-.5.8-.5 1.4v17.6c0 .6.2 1.1.5 1.4l.1.1 9.9-9.9v-.2L3.7 1.7l-.1.1Zm13.3 13.4-3.3-3.3v-.2l3.3-3.3.1.1 3.9 2.2c1.1.6 1.1 1.7 0 2.3l-3.9 2.2h-.1Zm-.1.1L13.4 12 3.6 21.8c.4.4 1 .4 1.7.1l11.5-6.6M16.8 8.7 5.3 2.1c-.7-.4-1.3-.3-1.7.1L13.4 12l3.4-3.3Z"/></svg>
+            <span class="dwa"><small>Google Play</small><span class="pl">Zarejestruj się wcześniej</span><span class="en">Pre-register now</span></span>
+          </a>
+        </div>
+        <div class="nagroda-3d" id="nagroda3d">
+          <div class="nagroda-obrot" id="nagrodaObrot">
+            <div class="holo"></div>
+            <img class="nag-jajo" src="img/jajo_srebrne.webp" alt="" width="220" height="230">
+            <div class="nag-diament">💎 <span>200</span></div>
+            <div class="nag-etykieta"><span class="pl">+ srebrne jajo</span><span class="en">+ silver egg</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="sek" id="faq" style="padding-top:40px">
+  <div class="wrap">
+    <div class="naglowek srodek"><span class="oko wej">FAQ</span><h2 class="h2 wej"><span class="zl pl">Pytania i odpowiedzi</span><span class="zl en">Questions and answers</span></h2></div>
+    <div class="faq wej">
+      <details><summary><span class="pl">Czy Emberhold jest darmowy?</span><span class="en">Is Emberhold free?</span></summary><div class="odp"><p class="pl">Tak. Grę pobierasz i grasz za darmo. W sklepie są opcjonalne zakupy (np. diamenty, przyspieszenia, dodatkowe osady), ale całą zawartość odblokujesz zwykłą grą.</p><p class="en">Yes. You download and play for free. The shop has optional purchases (e.g. diamonds, speed-ups, extra settlements), but all content can be unlocked by simply playing.</p></div></details>
+      <details><summary><span class="pl">Na jakich urządzeniach zagram?</span><span class="en">Which devices can I play on?</span></summary><div class="odp"><p class="pl">Na telefonach i tabletach z Androidem, przez Google Play.</p><p class="en">On Android phones and tablets, via Google Play.</p></div></details>
+      <details><summary><span class="pl">Jak odebrać nagrodę za pre-rejestrację?</span><span class="en">How do I get the pre-registration reward?</span></summary><div class="odp"><p class="pl">Kliknij „Zarejestruj się wcześniej” w Google Play przed premierą. Po premierze zainstaluj grę na tym samym koncie Google. 200 💎 i srebrne jajo dostaniesz automatycznie.</p><p class="en">Tap “Pre-register” on Google Play before launch. After launch, install the game on the same Google account. 200 💎 and a silver egg are granted automatically.</p></div></details>
+      <details><summary><span class="pl">Czy stracę postęp po zmianie telefonu?</span><span class="en">Will I lose progress if I change phones?</span></summary><div class="odp"><p class="pl">Nie. Gra zapisuje postęp w chmurze Google Play Games. Wystarczy zalogować się tym samym kontem.</p><p class="en">No. The game saves to the Google Play Games cloud. Just sign in with the same account.</p></div></details>
+      <details><summary><span class="pl">Czy wioska żyje, kiedy nie gram?</span><span class="en">Does the village live on while I'm away?</span></summary><div class="odp"><p class="pl">Tak. Jaja dojrzewają, a osadnicy pracują. Po powrocie zobaczysz raport z tego, co się działo.</p><p class="en">Yes. Eggs keep incubating and settlers keep working. When you return you get a report of what happened.</p></div></details>
+      <details><summary><span class="pl">W jakich językach jest gra?</span><span class="en">What languages is the game in?</span></summary><div class="odp"><p class="pl">Polski, angielski, niemiecki, hiszpański, czeski, ukraiński i chiński uproszczony.</p><p class="en">Polish, English, German, Spanish, Czech, Ukrainian and Simplified Chinese.</p></div></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ═══ STOPKA ═══ -->
+<footer class="stopka">
+  <div class="wrap">
+    <div class="stopka-uklad">
+      <div><a href="index.html" class="nav-logo" style="padding:0"><img src="img/logo.webp" alt="" width="38" height="38">EMBERHOLD</a>
+        <p><span class="pl">Fantasy strategia o budowaniu osady, hodowli petów i wyprawach do lochów. Tworzona z pasją przez Dryvora Studio.</span><span class="en">A fantasy strategy game about building a settlement, raising pets and delving into dungeons. Made with passion by Dryvora Studio.</span></p></div>
+      <div><h4><span class="pl">Gra</span><span class="en">Game</span></h4><a href="#swiat"><span class="pl">Świat</span><span class="en">World</span></a><a href="#pety"><span class="pl">Pety</span><span class="en">Pets</span></a><a href="#kuznia"><span class="pl">Kuźnia</span><span class="en">Forge</span></a><a href="jak-grac.html"><span class="pl">Jak grać</span><span class="en">How to play</span></a></div>
+      <div><h4><span class="pl">Linki</span><span class="en">Links</span></h4><a href="https://play.google.com/store/apps/details?id=com.emberhold.village" target="_blank" rel="noopener">Google Play</a><a href="https://smartoutlet02-tech.github.io/dryvora.github.io/" target="_blank" rel="noopener"><span class="pl">Polityka prywatności</span><span class="en">Privacy policy</span></a></div>
+    </div>
+    <div class="stopka-dol"><span>© <span id="rok">2026</span> Dryvora Studio · Emberhold</span><span class="pl">Google Play i logo Google Play są znakami towarowymi Google LLC.</span><span class="en">Google Play and the Google Play logo are trademarks of Google LLC.</span></div>
+  </div>
+</footer>
+
+<div class="modal" id="modal" aria-hidden="true"><button class="modal-x" id="modalX" aria-label="Zamknij">✕</button><video id="modalVid" controls playsinline preload="none" poster="img/trailer_poster.webp" data-src="klipy/zwiastun.mp4"></video></div>
+<div class="kursor" id="kursor"></div>
+
+<script src="js/dane-pety.js"></script>
+<script src="js/scena.js"></script>
+<script src="js/wspolne.js"></script>
+<script src="js/glowna.js"></script>
+</body>
+</html>

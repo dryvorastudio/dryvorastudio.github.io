@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jak grać w Emberhold — pełny przewodnik</title>
+<meta name="description" content="Pełny przewodnik po Emberhold: budynki, osadnicy i ich cechy, pory roku, obrona nocą, bohaterowie, kuźnia, pety, jaja, lochy i bossowie.">
+<meta name="theme-color" content="#0a0811">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<meta property="og:title" content="Emberhold — jak grać">
+<meta property="og:image" content="https://dryvorastudio.github.io/img/og.jpg">
+<link rel="canonical" href="https://dryvorastudio.github.io/jak-grac.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Inter:wght@400;500;600;700;800&family=Lora:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script>(function(){try{var l=localStorage.getItem('eh_lang');}catch(e){}if(!l){l=(navigator.language||'pl').slice(0,2)==='pl'?'pl':'en';}document.documentElement.lang=l;})();</script>
+<style>html[lang="pl"] .en, html[lang="en"] .pl{display:none!important}</style>
+</head>
+<body>
+<header class="nav tlo" id="nav">
+  <div class="wrap">
+    <a href="index.html" class="nav-logo"><img src="img/logo.webp" alt="" width="38" height="38">EMBERHOLD</a>
+    <nav class="nav-linki" id="menu">
+      <a href="index.html"><span class="pl">Strona główna</span><span class="en">Home</span></a>
+      <a href="index.html#pety"><span class="pl">Pety</span><span class="en">Pets</span></a>
+      <a href="index.html#kuznia"><span class="pl">Kuźnia</span><span class="en">Forge</span></a>
+      <a href="jak-grac.html" class="akt"><span class="pl">Jak grać</span><span class="en">How to play</span></a>
+      <a href="index.html#faq">FAQ</a>
+    </nav>
+    <div class="jezyk" id="jezyk" role="group" aria-label="Język / Language"><i></i><button data-l="pl">PL</button><button data-l="en">EN</button></div>
+    <a class="btn btn-zar btn-nav" href="index.html#rejestracja"><span class="pl">Zarejestruj się</span><span class="en">Pre-register</span></a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="podhero">
+  <div class="podhero-tlo"></div>
+  <div class="wrap" style="position:relative">
+    <span class="oko wej"><span class="pl">Przewodnik</span><span class="en">Guide</span></span>
+    <h1 class="wej"><span class="zl pl">Jak to wszystko działa</span><span class="zl en">How it all works</span></h1>
+    <p class="lead wej"><span class="pl">Wszystko, co warto wiedzieć o Emberhold, w jednym miejscu: od pierwszej chaty po ostatniego bossa. Liczby pochodzą prosto z gry.</span><span class="en">Everything worth knowing about Emberhold in one place, from the first hut to the final boss. The numbers come straight from the game.</span></p>
+  </div>
+</section>
+
+<div class="wrap przewodnik">
+  <aside class="spis" id="spis">
+    <b><span class="pl">Spis treści</span><span class="en">Contents</span></b>
+    <a href="#start"><span>🔥</span><span class="pl">Pierwsze kroki</span><span class="en">First steps</span></a>
+    <a href="#surowce"><span>🪵</span><span class="pl">Surowce</span><span class="en">Resources</span></a>
+    <a href="#budynki-r"><span>🏠</span><span class="pl">Budynki</span><span class="en">Buildings</span></a>
+    <a href="#osadnicy"><span>👥</span><span class="pl">Osadnicy</span><span class="en">Settlers</span></a>
+    <a href="#pory"><span>🍂</span><span class="pl">Pory roku</span><span class="en">Seasons</span></a>
+    <a href="#noc"><span>🌙</span><span class="pl">Noc i obrona</span><span class="en">Night & defence</span></a>
+    <a href="#bohaterowie"><span>⚔️</span><span class="pl">Bohaterowie</span><span class="en">Heroes</span></a>
+    <a href="#kuznia"><span>⚒️</span><span class="pl">Ekwipunek i kuźnia</span><span class="en">Gear & forge</span></a>
+    <a href="#pety"><span>🐉</span><span class="pl">Pety</span><span class="en">Pets</span></a>
+    <a href="#wyprawy"><span>🗺️</span><span class="pl">Wyprawy</span><span class="en">Expeditions</span></a>
+    <a href="#lochy"><span>🗝️</span><span class="pl">Lochy i bossowie</span><span class="en">Dungeons & bosses</span></a>
+    <a href="#badania"><span>📜</span><span class="pl">Badania</span><span class="en">Research</span></a>
+    <a href="#sklep"><span>💎</span><span class="pl">Diamenty i sklep</span><span class="en">Diamonds & shop</span></a>
+  </aside>
+
+  <main>
+    <!-- 1 -->
+    <section class="rozdzial" id="start">
+      <span class="oko">01</span>
+      <h2><span class="pl">Pierwsze kroki</span><span class="en">First steps</span></h2>
+      <p><span class="pl">Zaczynasz na leśnej polanie z ogniskiem i garstką osadników. Pierwsze dni to fundamenty: dach nad głową, jedzenie i drewno na kolejne budowy.</span><span class="en">You start in a forest clearing with a campfire and a handful of settlers. The first days are about the basics: a roof over their heads, food and wood for the next builds.</span></p>
+      <div class="oś">
+        <div><b><span class="pl">1. Postaw chatę</span><span class="en">1. Build a hut</span></b><span class="pl">Każdy poziom chaty to dwa miejsca do spania. Bez łóżek nikt nowy nie dołączy.</span><span class="en">Each hut level gives two beds. Without beds, no one new will join.</span></div>
+        <div><b><span class="pl">2. Farma i tartak</span><span class="en">2. Farm and sawmill</span></b><span class="pl">Rolnicy karmią wioskę, drwale dają drewno, najważniejszy surowiec na start.</span><span class="en">Farmers feed the village and loggers bring wood, the most important early resource.</span></div>
+        <div><b><span class="pl">3. Przydziel zawody</span><span class="en">3. Assign jobs</span></b><span class="pl">Każdy budynek daje określoną liczbę etatów. Dopasuj ludzi do cech: bystry do biblioteki, odważny do koszar.</span><span class="en">Every building offers a set number of jobs. Match people to their traits: the bright to the library, the brave to the barracks.</span></div>
+        <div><b><span class="pl">4. Przygotuj się na noc</span><span class="en">4. Prepare for night</span></b><span class="pl">Palisada, wnyki i strażnik w koszarach. Pierwsza wataha przyjdzie szybciej, niż myślisz.</span><span class="en">A palisade, traps and a guard in the barracks. The first wolf pack will come sooner than you think.</span></div>
+        <div><b><span class="pl">5. Rośnij</span><span class="en">5. Grow</span></b><span class="pl">Tawerna, kuźnia, biblioteka, zagroda dla petów i pierwsza wyprawa do lochu.</span><span class="en">A tavern, a forge, a library, a pet yard and your first trip into the dungeon.</span></div>
+      </div>
+      <div class="wskazowka"><p><span class="pl">Wioska żyje także, gdy nie grasz. Po powrocie dostaniesz raport z tego, co się wydarzyło.</span><span class="en">The village lives on while you're away. When you come back, you get a report of what happened.</span></p></div>
+    </section>
+
+    <!-- 2 -->
+    <section class="rozdzial" id="surowce">
+      <span class="oko">02</span>
+      <h2><span class="pl">Surowce i magazyny</span><span class="en">Resources and storage</span></h2>
+      <p><span class="pl">Pięć surowców napędza całą osadę. Każdy ma swój magazyn, który rośnie razem z poziomem budynku produkcyjnego. Nadmiar przepada, więc warto wydawać na bieżąco.</span><span class="en">Five resources power the whole settlement. Each has its own storage that grows with the level of its production building. Anything over the cap is lost, so spend as you go.</span></p>
+      <div class="przewin"><table class="tabela">
+        <tr><th><span class="pl">Surowiec</span><span class="en">Resource</span></th><th><span class="pl">Kto zdobywa</span><span class="en">Gathered by</span></th><th><span class="pl">Na co</span><span class="en">Used for</span></th></tr>
+        <tr><td>🪵 <span class="pl">Drewno</span><span class="en">Wood</span></td><td><span class="pl">Drwal w tartaku</span><span class="en">Logger at the sawmill</span></td><td><span class="pl">Prawie każdy budynek, palisady, łuki</span><span class="en">Almost every building, palisades, bows</span></td></tr>
+        <tr><td>🪨 <span class="pl">Kamień</span><span class="en">Stone</span></td><td><span class="pl">Górnik w kopalni</span><span class="en">Miner at the quarry</span></td><td><span class="pl">Warsztaty, wieże, ulepszanie sprzętu</span><span class="en">Workshops, towers, gear upgrades</span></td></tr>
+        <tr><td>🌾 <span class="pl">Żywność</span><span class="en">Food</span></td><td><span class="pl">Rolnik na farmie</span><span class="en">Farmer at the farm</span></td><td><span class="pl">Sytość osadników, tawerna</span><span class="en">Settlers' fullness, the tavern</span></td></tr>
+        <tr><td>🪙 <span class="pl">Złoto</span><span class="en">Gold</span></td><td><span class="pl">Wyprawy, handel, nagrody</span><span class="en">Expeditions, trade, rewards</span></td><td><span class="pl">Kuźnia, jubiler, alchemik</span><span class="en">Forge, jeweller, alchemist</span></td></tr>
+        <tr><td>🔬 <span class="pl">Nauka</span><span class="en">Science</span></td><td><span class="pl">Uczony w bibliotece</span><span class="en">Scholar at the library</span></td><td><span class="pl">Badania, ulepszanie sprzętu</span><span class="en">Research, gear upgrades</span></td></tr>
+        <tr><td>💎 <span class="pl">Diamenty</span><span class="en">Diamonds</span></td><td><span class="pl">Bossowie, zadania, kalendarz, sklep</span><span class="en">Bosses, quests, calendar, shop</span></td><td><span class="pl">Przyspieszenia, jaja, wygody</span><span class="en">Speed-ups, eggs, conveniences</span></td></tr>
+      </table></div>
+    </section>
+
+    <!-- 3 -->
+    <section class="rozdzial" id="budynki-r">
+      <span class="oko">03</span>
+      <h2><span class="pl">18 budynków</span><span class="en">18 buildings</span></h2>
+      <p><span class="pl">Każdy budynek można rozbudowywać na kolejne poziomy, a większość ma też własne drzewko ulepszeń, np. tartak: +15% drewna, większy magazyn, potem +30%. Koszt poniżej dotyczy pierwszego poziomu.</span><span class="en">Every building can be levelled up, and most have their own upgrade tree too, e.g. the sawmill: +15% wood, more storage, then +30%. The cost shown is for level one.</span></p>
+      <div class="budynki" id="budynki"></div>
+    </section>
+
+    <!-- 4 -->
+    <section class="rozdzial" id="osadnicy">
+      <span class="oko">04</span>
+      <h2><span class="pl">Osadnicy</span><span class="en">Settlers</span></h2>
+      <p><span class="pl">Każdy osadnik ma imię, poziom i doświadczenie oraz cztery paski: zdrowie, sytość, nastrój i doświadczenie. Głodny i smutny pracuje gorzej, ranny trafia do szpitala. Większość ma jedną zaletę i często jedną wadę.</span><span class="en">Every settler has a name, a level and experience, plus four bars: health, fullness, mood and experience. The hungry and unhappy work worse, the wounded go to the hospital. Most have one strength and often one flaw.</span></p>
+      <h3><span class="pl">Zawody</span><span class="en">Jobs</span></h3>
+      <div class="siatka s4">
+        <div class="karta"><div class="ikona">🪓</div><h3><span class="pl">Drwal</span><span class="en">Logger</span></h3><p><span class="pl">Tartak · drewno</span><span class="en">Sawmill · wood</span></p></div>
+        <div class="karta"><div class="ikona">⛏️</div><h3><span class="pl">Górnik</span><span class="en">Miner</span></h3><p><span class="pl">Kopalnia · kamień</span><span class="en">Quarry · stone</span></p></div>
+        <div class="karta"><div class="ikona">🌾</div><h3><span class="pl">Rolnik</span><span class="en">Farmer</span></h3><p><span class="pl">Farma · żywność</span><span class="en">Farm · food</span></p></div>
+        <div class="karta"><div class="ikona">📖</div><h3><span class="pl">Uczony</span><span class="en">Scholar</span></h3><p><span class="pl">Biblioteka · nauka</span><span class="en">Library · science</span></p></div>
+        <div class="karta"><div class="ikona">🗡️</div><h3><span class="pl">Strażnik</span><span class="en">Guard</span></h3><p><span class="pl">Koszary · obrona nocą</span><span class="en">Barracks · night defence</span></p></div>
+        <div class="karta"><div class="ikona">💊</div><h3><span class="pl">Medyk</span><span class="en">Medic</span></h3><p><span class="pl">Szpital · leczenie</span><span class="en">Hospital · healing</span></p></div>
+        <div class="karta"><div class="ikona">⚗️</div><h3><span class="pl">Alchemik</span><span class="en">Alchemist</span></h3><p><span class="pl">Pracownia · mikstury</span><span class="en">Workshop · potions</span></p></div>
+        <div class="karta"><div class="ikona">🍺</div><h3><span class="pl">Najemnik</span><span class="en">Mercenary</span></h3><p><span class="pl">Nowi ludzie z tawerny, codziennie inni</span><span class="en">New people from the tavern, different every day</span></p></div>
+      </div>
+      <h3><span class="pl">12 cech charakteru</span><span class="en">12 traits</span></h3>
+      <div class="cechy" id="cechy"></div>
+      <div class="duo"><div><h3 style="margin-top:0"><span class="pl">Tawerna i ława najemnych</span><span class="en">The tavern and mercenary bench</span></h3><p><span class="pl">Codziennie przychodzą nowi chętni z gotowym zawodem, poziomem i cechami. Lepsza tawerna to więcej kandydatów (do 5 dziennie). Pierwsi są za darmo, ale potrzebujesz wolnych łóżek.</span><span class="en">New recruits arrive every day with a job, a level and traits. A better tavern means more candidates (up to 5 a day). The first ones are free, but you need free beds.</span></p></div>
+        <div class="telefon" style="width:min(260px,70vw)"><img src="img/s_k_tawerna.webp" alt="" loading="lazy"></div></div>
+    </section>
+
+    <!-- 5 -->
+    <section class="rozdzial" id="pory">
+      <span class="oko">05</span>
+      <h2><span class="pl">Pory roku</span><span class="en">Seasons</span></h2>
+      <p><span class="pl">Rok w Emberhold ma 32 dni, po 8 na każdą porę. Zmienia się wygląd świata i to, ile dają pola, las i kopalnia.</span><span class="en">A year in Emberhold lasts 32 days, 8 per season. The world changes its look, and so does the output of fields, forest and quarry.</span></p>
+      <div class="przewin"><table class="tabela">
+        <tr><th><span class="pl">Pora</span><span class="en">Season</span></th><th>🌾</th><th>🪵</th><th>🪨</th><th><span class="pl">Rada</span><span class="en">Tip</span></th></tr>
+        <tr><td>🌱 <span class="pl">Wiosna</span><span class="en">Spring</span></td><td class="plus">+20%</td><td>0%</td><td>0%</td><td><span class="pl">Rozbudowuj farmy</span><span class="en">Expand farms</span></td></tr>
+        <tr><td>☀️ <span class="pl">Lato</span><span class="en">Summer</span></td><td class="plus">+35%</td><td class="plus">+10%</td><td class="plus">+5%</td><td><span class="pl">Najlepszy czas na zapasy</span><span class="en">Best time to stock up</span></td></tr>
+        <tr><td>🍂 <span class="pl">Jesień</span><span class="en">Autumn</span></td><td class="minus">−15%</td><td class="plus">+15%</td><td>0%</td><td><span class="pl">Drewno na zimę</span><span class="en">Wood for winter</span></td></tr>
+        <tr><td>❄️ <span class="pl">Zima</span><span class="en">Winter</span></td><td class="minus">−70%</td><td class="minus">−25%</td><td class="minus">−20%</td><td><span class="pl">Żyj z zapasów</span><span class="en">Live off your stores</span></td></tr>
+      </table></div>
+      <div class="siatka s3" style="margin-top:24px">
+        <img class="zrzut" src="img/s_pora_lato.webp" alt="" loading="lazy"><img class="zrzut" src="img/s_pora_jesien.webp" alt="" loading="lazy"><img class="zrzut" src="img/s_pora_zima.webp" alt="" loading="lazy">
+      </div>
+    </section>
+
+    <!-- 6 -->
+    <section class="rozdzial" id="noc">
+      <span class="oko">06</span>
+      <h2><span class="pl">Noc i obrona</span><span class="en">Night and defence</span></h2>
+      <p><span class="pl">Po zmroku przychodzą wilcze watahy i zbóje. Twoja obrona to warstwy:</span><span class="en">After dark come wolf packs and raiders. Your defence is built in layers:</span></p>
+      <ul class="lista">
+        <li><div class="ikona">🪵</div><div><b><span class="pl">Palisada</span><span class="en">Palisade</span></b><span class="pl">Zatrzymuje wilki. 120 wytrzymałości na poziom. Uszkodzona wymaga naprawy.</span><span class="en">Stops wolves. 120 durability per level. Damaged sections need repair.</span></span></div></li>
+        <li><div class="ikona">🏹</div><div><b><span class="pl">Wieża</span><span class="en">Tower</span></b><span class="pl">Strażnik na wieży strzela z góry z większym zasięgiem (×1,9 na 1. poziomie i więcej z każdym kolejnym).</span><span class="en">A guard on a tower shoots from above with extra range (×1.9 at level 1 and more with every level).</span></span></div></li>
+        <li><div class="ikona">🪤</div><div><b><span class="pl">Wnyki</span><span class="en">Traps</span></b><span class="pl">Tanie i jednorazowe: 40 obrażeń na poziom dla pierwszego wilka, który wejdzie.</span><span class="en">Cheap and single-use: 40 damage per level to the first wolf that steps in.</span></span></div></li>
+        <li><div class="ikona">🛡️</div><div><b><span class="pl">Koszary i strażnicy</span><span class="en">Barracks and guards</span></b><span class="pl">+5 obrony wioski na poziom. Strażnicy walczą wręcz albo z łuku.</span><span class="en">+5 village defence per level. Guards fight in melee or with bows.</span></span></div></li>
+        <li><div class="ikona">🐾</div><div><b><span class="pl">Pety</span><span class="en">Pets</span></b><span class="pl">Pet stoi przy właścicielu i używa swoich zdolności: zionie ogniem, zamraża, leczy.</span><span class="en">A pet stays by its owner and uses its abilities: breathing fire, freezing, healing.</span></span></div></li>
+        <li><div class="ikona">🏥</div><div><b><span class="pl">Szpital</span><span class="en">Hospital</span></b><span class="pl">Ranni wracają do zdrowia szybciej: +12% szans na wyleczenie na poziom.</span><span class="en">The wounded recover faster: +12% recovery chance per level.</span></span></div></li>
+      </ul>
+      <div class="zrzut" style="margin-top:30px;aspect-ratio:16/9"><video data-src="klipy/hist_noc.mp4" muted loop playsinline style="width:100%;height:100%;object-fit:cover"></video></div>
+    </section>
+
+    <!-- 7 -->
+    <section class="rozdzial" id="bohaterowie">
+      <span class="oko">07</span>
+      <h2><span class="pl">Bohaterowie, klasy i specjalizacje</span><span class="en">Heroes, classes and specialisations</span></h2>
+      <p><span class="pl">Osadnik, który zdobędzie doświadczenie w walce, może zostać bohaterem. Najpierw wybiera klasę, potem jedną z dwóch specjalizacji. Każda ma trzy własne umiejętności.</span><span class="en">A settler who gains combat experience can become a hero. First they choose a class, then one of two specialisations, each with three unique skills.</span></p>
+      <div class="siatka s3">
+        <div class="karta"><img src="img/hero_rycerka.webp" alt="" style="height:120px;margin-bottom:6px" class="pix"><h3>⚔️ <span class="pl">Wojownik</span><span class="en">Warrior</span></h3><p><span class="pl">Staje w pierwszym szeregu i przyjmuje ciosy na siebie.</span><span class="en">Stands in the front line and takes the blows.</span></p><p style="margin-top:12px"><b class="pl">Rycerz</b><b class="en">Knight</b>: <span class="pl">uderza pierwszy i najmocniej.</span><span class="en">strikes first and hardest.</span><br><b class="pl">Obrońca</b><b class="en">Defender</b>: <span class="pl">osłania swoich i odbija ciosy.</span><span class="en">shields allies and reflects blows.</span></p></div>
+        <div class="karta"><img src="img/hero_lucznik.webp" alt="" style="height:120px;margin-bottom:6px" class="pix"><h3>🏹 <span class="pl">Asasyn</span><span class="en">Assassin</span></h3><p><span class="pl">Razi z dystansu, zanim wróg zdąży podejść.</span><span class="en">Strikes from range before the enemy gets close.</span></p><p style="margin-top:12px"><b class="pl">Snajper</b><b class="en">Sniper</b>: <span class="pl">jeden strzał, jeden wróg.</span><span class="en">one shot, one enemy.</span><br><b class="pl">Łowca</b><b class="en">Hunter</b>: <span class="pl">zna trucizny i zna las.</span><span class="en">knows poisons and knows the forest.</span></p></div>
+        <div class="karta"><img src="img/hero_mag.webp" alt="" style="height:120px;margin-bottom:6px" class="pix"><h3>🔮 <span class="pl">Mag</span><span class="en">Mage</span></h3><p><span class="pl">Włada mocą, której reszta wioski nie rozumie.</span><span class="en">Wields a power the rest of the village doesn't understand.</span></p><p style="margin-top:12px"><b class="pl">Uzdrowiciel</b><b class="en">Healer</b>: <span class="pl">trzyma wioskę przy życiu.</span><span class="en">keeps the village alive.</span><br><b class="pl">Czarodziej</b><b class="en">Sorcerer</b>: <span class="pl">ogień, grom i lód na rozkaz.</span><span class="en">fire, thunder and ice on command.</span></p></div>
+      </div>
+      <div class="duo"><div><h3 style="margin-top:0"><span class="pl">Karta bohatera</span><span class="en">Hero sheet</span></h3><p><span class="pl">Siła, wytrzymałość, praca i obrona. Do tego siedem miejsc na sprzęt: broń, hełm, zbroja, tarcza, buty, amulet i pierścień oraz jedno miejsce na peta.</span><span class="en">Power, endurance, work and defence. Plus seven gear slots: weapon, helmet, armour, shield, boots, amulet and ring, and one pet slot.</span></p></div>
+        <div class="telefon" style="width:min(260px,70vw)"><img src="img/s_k_karta.webp" alt="" loading="lazy"></div></div>
+    </section>
+
+    <!-- 8 -->
+    <section class="rozdzial" id="kuznia">
+      <span class="oko">08</span>
+      <h2><span class="pl">Ekwipunek i kuźnia</span><span class="en">Gear and the forge</span></h2>
+      <p><span class="pl">Podstawowy sprzęt wykuwają warsztaty: brońmistrz, zbrojownia i jubiler. Ich poziom decyduje o tym, jak dobre przedmioty powstaną. Rzadsze klasy mają mocniejsze statystyki:</span><span class="en">Basic gear is made in the workshops: weaponsmith, armoury and jeweller. Their level decides how good the items are. Rarer classes have stronger stats:</span></p>
+      <div class="siatka s4" style="margin:20px 0">
+        <div class="karta" style="text-align:center"><img src="img/items/w2.webp" class="pix" style="height:64px;margin:0 auto" alt=""><h3 style="color:#dcedc8"><span class="pl">Zwykły</span><span class="en">Common</span></h3><p>×1,00</p></div>
+        <div class="karta" style="text-align:center"><img src="img/items/weapon_uni.webp" class="pix" style="height:64px;margin:0 auto" alt=""><h3 style="color:#ffd54f"><span class="pl">Unikatowy</span><span class="en">Unique</span></h3><p>×1,30</p></div>
+        <div class="karta" style="text-align:center"><img src="img/items/weapon_her.webp" class="pix" style="height:64px;margin:0 auto" alt=""><h3 style="color:#42a5f5"><span class="pl">Heroiczny</span><span class="en">Heroic</span></h3><p>×1,70</p></div>
+        <div class="karta" style="text-align:center"><img src="img/items/weapon_leg.webp" class="pix" style="height:64px;margin:0 auto" alt=""><h3 style="color:#ba68c8"><span class="pl">Legendarny</span><span class="en">Legendary</span></h3><p>×2,30</p></div>
+      </div>
+      <h3><span class="pl">Ulepszanie: od +1 do +9</span><span class="en">Upgrading: from +1 to +9</span></h3>
+      <p><span class="pl">Każdy plus to +15% do wszystkich statystyk. Ulepszenie zawsze się udaje, ale kuźnia poziomu 1 pozwala dojść tylko do +2, poziomu 2 do +4 itd. Mistrzowskie +9 wymaga kuźni poziomu 5. Przedmiot +9 świeci barwą swojej klasy.</span><span class="en">Each plus adds +15% to all stats. An upgrade always succeeds, but a level 1 forge only goes up to +2, level 2 up to +4 and so on. A master +9 needs a level 5 forge. A +9 item glows in the colour of its class.</span></p>
+      <div class="przewin"><table class="tabela" id="kuzniaTab"></table></div>
+      <h3><span class="pl">Łączenie</span><span class="en">Merging</span></h3>
+      <p><span class="pl">Trzy przedmioty tego samego rodzaju łączysz w jeden, klasę wyżej. Szansa rośnie z poziomem kuźni. Heroiczny i legendarny sprzęt nadal najpewniej zdobędziesz w lochu i na wyprawach.</span><span class="en">Merge three items of the same kind into one, a class higher. The chance grows with forge level. Heroic and legendary gear is still most reliably found in dungeons and on expeditions.</span></p>
+      <div class="przewin"><table class="tabela" id="laczTab"></table></div>
+      <h3><span class="pl">Przetapianie</span><span class="en">Smelting</span></h3>
+      <p><span class="pl">Niepotrzebny przedmiot oddaje złoto i naukę. Rzadsze przedmioty zwracają więcej.</span><span class="en">An unwanted item gives back gold and science. Rarer items return more.</span></p>
+      <div class="na-koniec" style="margin-top:30px"><p style="margin:0 auto 16px;color:var(--tekst)"><span class="pl">Wypróbuj symulator kuźni na stronie głównej.</span><span class="en">Try the forge simulator on the home page.</span></p><a class="btn btn-zar" href="index.html#kuznia">⚒️ <span class="pl">Do kuźni</span><span class="en">To the forge</span></a></div>
+    </section>
+
+    <!-- 9 -->
+    <section class="rozdzial" id="pety">
+      <span class="oko">09</span>
+      <h2><span class="pl">Pety</span><span class="en">Pets</span></h2>
+      <p><span class="pl">Zbuduj zagrodę, a otworzy się świat petów. Pet przypisany do osadnika chodzi za nim i walczy u jego boku w wiosce i w lochu. Jego siła zależy od rangi, gwiazdek i poziomu właściciela.</span><span class="en">Build a pet yard and the world of pets opens up. A pet assigned to a settler follows them and fights by their side in the village and the dungeon. Its strength depends on rank, stars and the owner's level.</span></p>
+      <div class="przewin"><table class="tabela" id="rangiTab"></table></div>
+      <h3><span class="pl">Jaja i inkubator</span><span class="en">Eggs and the incubator</span></h3>
+      <div class="przewin"><table class="tabela">
+        <tr><th><span class="pl">Jajo</span><span class="en">Egg</span></th><th><span class="pl">Czas</span><span class="en">Time</span></th><th style="color:var(--C)">C</th><th style="color:var(--B)">B</th><th style="color:var(--A)">A</th><th style="color:var(--S)">S</th></tr>
+        <tr><td><img src="img/jajo_zwykle.webp" alt="" style="height:26px;display:inline;vertical-align:middle"> <span class="pl">Zwykłe</span><span class="en">Common</span></td><td>15 min</td><td>70%</td><td>27%</td><td>3%</td><td>—</td></tr>
+        <tr><td><img src="img/jajo_srebrne.webp" alt="" style="height:26px;display:inline;vertical-align:middle"> <span class="pl">Srebrne</span><span class="en">Silver</span></td><td>1 h</td><td>—</td><td>70%</td><td>29,5%</td><td>0,5%</td></tr>
+        <tr><td><img src="img/jajo_zlote.webp" alt="" style="height:26px;display:inline;vertical-align:middle"> <span class="pl">Złote</span><span class="en">Golden</span></td><td>3 h</td><td>—</td><td>30%</td><td>67%</td><td>3%</td></tr>
+        <tr><td><img src="img/jajo_smocze.webp" alt="" style="height:26px;display:inline;vertical-align:middle"> <span class="pl">Smocze</span><span class="en">Dragon</span></td><td>6 h</td><td>—</td><td>25%</td><td>60%</td><td>15%</td></tr>
+      </table></div>
+      <div class="duo"><div><p><span class="pl">Inkubator startuje z jednym miejscem. Ulepszysz go do 4 miejsc za esencję, kryształy i pióra. Jaja zdobywasz z wypraw, lochów, nagród i wydarzeń.</span><span class="en">The incubator starts with one slot. Upgrade it to 4 slots with essence, crystals and feathers. You get eggs from expeditions, dungeons, rewards and events.</span></p>
+        <p><span class="pl">W zagrodzie masz cztery zakładki: <b>Wyklucie</b>, <b>Bestiariusz</b> (kolekcja wszystkich gatunków), <b>Rozwój</b> i <b>Wypuszczenie</b>.</span><span class="en">The pet yard has four tabs: <b>Hatch</b>, <b>Bestiary</b> (a collection of every species), <b>Growth</b> and <b>Release</b>.</span></p></div>
+        <div class="telefon" style="width:min(260px,70vw)"><video data-src="klipy/zagroda.mp4" muted loop playsinline></video></div></div>
+      <div class="zrzut" style="margin-top:30px;aspect-ratio:16/9"><video data-src="klipy/wyklucie.mp4" muted loop playsinline style="width:100%;height:100%;object-fit:cover"></video></div>
+      <h3><span class="pl">Rozwój: gwiazdki</span><span class="en">Growth: stars</span></h3>
+      <div class="duo"><div>
+        <p><span class="pl">Połącz dwa pety tego samego gatunku, a zostanie jeden, o gwiazdkę silniejszy (do ★5). Każda gwiazdka to +15% ataku i mocniejsze zdolności. Wiele gatunków zmienia też wygląd. Koszt w esencji rośnie z gwiazdkami i rangą.</span><span class="en">Merge two pets of the same species to get one that is a star stronger (up to ★5). Each star adds +15% attack and stronger abilities. Many species also change their look. The essence cost grows with stars and rank.</span></p>
+        <p><span class="pl"><b>Wypuszczenie</b>: pet odchodzi do lasu i zostawia esencję oraz odłamek jaja. 10 odłamków składa się w nowe jajo.</span><span class="en"><b>Releasing</b>: the pet returns to the forest and leaves essence plus an egg shard. 10 shards make a new egg.</span></p></div>
+        <div class="telefon" style="width:min(260px,70vw)"><video data-src="klipy/laczenie.mp4" muted loop playsinline></video></div></div>
+      <h3><span class="pl">Wszystkie 32 gatunki</span><span class="en">All 32 species</span></h3>
+      <div class="pet-siatka" id="petySiatka"></div>
+      <h3><span class="pl">Zdolności petów</span><span class="en">Pet abilities</span></h3>
+      <div class="przewin"><table class="tabela" id="umTab"></table></div>
+    </section>
+
+    <!-- 10 -->
+    <section class="rozdzial" id="wyprawy">
+      <span class="oko">10</span>
+      <h2><span class="pl">Wyprawy po mapie świata</span><span class="en">World map expeditions</span></h2>
+      <div class="duo"><div>
+        <p><span class="pl">Wokół Twojej wioski rozciąga się mapa: wilcze legowiska, mglista wieża, opuszczony obóz, stare ruiny, smocze gniazda i wrogie osady. Wyślij drużynę, a po powrocie przyniesie łupy, surowce i doświadczenie. Im dalej, tym groźniej i bogaciej.</span><span class="en">Around your village stretches a map: wolf dens, a misty tower, an abandoned camp, old ruins, dragon nests and rival settlements. Send a party and it returns with loot, resources and experience. The farther you go, the more dangerous and the richer it gets.</span></p>
+        <div class="wskazowka"><p><span class="pl">Szczęściarz w drużynie przynosi lepsze łupy, a odważny nie wycofa się przy pierwszym ataku.</span><span class="en">A lucky settler in the party brings better loot, and a brave one won't retreat at the first attack.</span></p></div></div>
+        <div class="telefon" style="width:min(260px,70vw)"><img src="img/s_k_mapa.webp" alt="" loading="lazy"></div></div>
+    </section>
+
+    <!-- 11 -->
+    <section class="rozdzial" id="lochy">
+      <span class="oko">11</span>
+      <h2><span class="pl">Lochy i bossowie</span><span class="en">Dungeons and bosses</span></h2>
+      <p><span class="pl">Loch to schodzenie piętro po piętrze. Na rozdrożach wybierasz ścieżkę. Wrogowie na niższych piętrach są coraz silniejsi: nietoperze, szkielety, mimiki, piekielne ogary, licze, upiory. Co kilka pięter czeka boss.</span><span class="en">A dungeon means going down floor by floor. At crossroads you choose a path. Enemies get stronger the deeper you go: bats, skeletons, mimics, hellhounds, liches, wraiths. Every few floors a boss awaits.</span></p>
+      <ul class="lista">
+        <li><div class="ikona">🔯</div><div><b><span class="pl">Pieczęć powrotu</span><span class="en">Return seal</span></b><span class="pl">Natychmiastowy powrót do wioski z całą sakwą łupów.</span><span class="en">Instant return to the village with the full loot bag.</span></span></div></li>
+        <li><div class="ikona">🏃</div><div><b><span class="pl">Odwrót</span><span class="en">Retreat</span></b><span class="pl">Możesz uciec w każdej chwili, ale stracisz część łupu.</span><span class="en">You can flee at any time, but you'll lose part of the loot.</span></span></div></li>
+      </ul>
+      <div class="przewin" style="margin-top:24px"><table class="tabela" id="bossTab"></table></div>
+      <div class="zrzut" style="margin-top:30px;aspect-ratio:16/9"><video data-src="klipy/hist_bossy.mp4" muted loop playsinline style="width:100%;height:100%;object-fit:cover"></video></div>
+    </section>
+
+    <!-- 12 -->
+    <section class="rozdzial" id="badania">
+      <span class="oko">12</span>
+      <h2><span class="pl">Badania</span><span class="en">Research</span></h2>
+      <p><span class="pl">Biblioteka nie daje procentów, od tego są ulepszenia budynków. Badania odblokowują rzeczy, których wcześniej nie było: lepsze klasy sprzętu, receptury mikstur i udogodnienia w lochu.</span><span class="en">The library doesn't give percentages, that's what building upgrades are for. Research unlocks things that didn't exist before: better gear classes, potion recipes and dungeon perks.</span></p>
+      <div class="siatka s3">
+        <div class="karta"><div class="ikona">⚒️</div><h3><span class="pl">Warsztaty</span><span class="en">Workshops</span></h3><p><span class="pl"><b>Probiernia</b>: szansa na unikat przy wykuwaniu. <b>Hartowanie</b>: znikoma szansa na heroik. <b>Pieczęć mistrza</b>: muśnięcie legendy.</span><span class="en"><b>Assay room</b>: a chance of a unique when forging. <b>Tempering</b>: a slim chance of heroic. <b>Master's seal</b>: a touch of legendary.</span></p></div>
+        <div class="karta"><div class="ikona">⚗️</div><h3><span class="pl">Alchemia</span><span class="en">Alchemy</span></h3><p><span class="pl"><b>Receptury bojowe</b>: ogień grecki, mróz w butelce. <b>Wsparcia</b>: dym kojący, napar żelaznej woli. <b>Gospodarskie</b>: iskra pracy, deszcz wzrostu.</span><span class="en"><b>Combat recipes</b>: Greek fire, frost in a bottle. <b>Support</b>: soothing smoke, iron-will brew. <b>Household</b>: spark of work, rain of growth.</span></p></div>
+        <div class="karta"><div class="ikona">🪢</div><h3><span class="pl">Głębiny</span><span class="en">Depths</span></h3><p><span class="pl"><b>Liny asekuracyjne</b>: tańszy odwrót. <b>Sztuka obozowania</b>: postój leczy drużynę. <b>Złamane pieczęcie</b>: trzy przejścia na rozdrożu zamiast dwóch.</span><span class="en"><b>Safety ropes</b>: cheaper retreats. <b>Art of camping</b>: a rest heals the party. <b>Broken seals</b>: three paths at crossroads instead of two.</span></p></div>
+      </div>
+    </section>
+
+    <!-- 13 -->
+    <section class="rozdzial" id="sklep">
+      <span class="oko">13</span>
+      <h2><span class="pl">Diamenty, nagrody i sklep</span><span class="en">Diamonds, rewards and the shop</span></h2>
+      <p><span class="pl">Emberhold jest darmowy. Diamenty zdobywasz za bossów, zadania i kalendarz codziennych nagród. W sklepie możesz je dokupić, a do tego przyspieszenia, pieczęcie powrotu i miejsca na kolejne osady (do trzech). To opcja, nie warunek: całą grę przejdziesz bez płacenia.</span><span class="en">Emberhold is free. You earn diamonds from bosses, quests and the daily reward calendar. The shop lets you buy more, plus speed-ups, return seals and slots for more settlements (up to three). It's an option, not a requirement: you can finish the whole game without paying.</span></p>
+      <div class="wskazowka"><p><span class="pl">Postęp zapisuje się w chmurze Google Play Games, więc po zmianie telefonu wioska czeka na Ciebie.</span><span class="en">Progress is saved to the Google Play Games cloud, so your village waits for you on a new phone.</span></p></div>
+      <div class="na-koniec">
+        <h2 style="margin:0 0 12px"><span class="zl pl">Gotów rozpalić ognisko?</span><span class="zl en">Ready to light the fire?</span></h2>
+        <p style="margin:0 auto 22px"><span class="pl">Zarejestruj się wcześniej i odbierz w dniu premiery 200 💎 oraz srebrne jajo.</span><span class="en">Pre-register and get 200 💎 and a silver egg on launch day.</span></p>
+        <a class="btn btn-zar" href="https://play.google.com/store/apps/details?id=com.emberhold.village" target="_blank" rel="noopener"><span class="pl">Zarejestruj się w Google Play</span><span class="en">Pre-register on Google Play</span></a>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer class="stopka">
+  <div class="wrap">
+    <div class="stopka-dol" style="margin-top:0;border:0;padding-top:0"><span>© <span id="rok">2026</span> Dryvora Studio · Emberhold</span><span><a href="index.html" style="display:inline"><span class="pl">Strona główna</span><span class="en">Home</span></a> · <a href="https://smartoutlet02-tech.github.io/dryvora.github.io/" style="display:inline" target="_blank" rel="noopener"><span class="pl">Polityka prywatności</span><span class="en">Privacy policy</span></a></span></div>
+  </div>
+</footer>
+<div class="kursor" id="kursor"></div>
+<script src="js/dane-pety.js"></script>
+<script src="js/wspolne.js"></script>
+<script src="js/przewodnik.js"></script>
+</body>
+</html>
