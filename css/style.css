@@ -100,7 +100,7 @@ h1,h2,h3,h4{font-family:var(--f-tyt); font-weight:700; line-height:1.08; margin:
   padding:calc(var(--nav) + 10px) 16px 150px; pointer-events:none}
 .hero-tresc::before{content:""; position:absolute; left:50%; top:46%; width:min(1100px,140vw); height:78%; translate:-50% -50%; z-index:-1; background:radial-gradient(closest-side,rgba(8,5,14,.62),rgba(8,5,14,.28) 60%,transparent); pointer-events:none}
 .hero-tresc > *{pointer-events:auto}
-.hero-logo{width:min(300px, 62vw); height:auto; filter:drop-shadow(0 10px 40px rgba(255,120,30,.45)) drop-shadow(0 0 2px rgba(0,0,0,.8)); margin-bottom:10px}
+.hero-logo{width:min(300px, 62vw, 34vh); height:auto; filter:drop-shadow(0 10px 40px rgba(255,120,30,.45)) drop-shadow(0 0 2px rgba(0,0,0,.8)); margin-bottom:10px}
 .hero h1{font-size:clamp(28px,4.4vw,58px); text-shadow:0 4px 30px rgba(0,0,0,.7); max-width:15ch}
 .hero p.lead{color:#eadfca; text-shadow:0 2px 16px rgba(0,0,0,.9); margin:16px auto 30px; max-width:560px}
 .hero-cta{display:flex; flex-wrap:wrap; gap:14px; justify-content:center}
